@@ -1,0 +1,11 @@
+                            Table "public.lists"
+ Column |  Type   | Collation | Nullable |              Default              
+--------+---------+-----------+----------+-----------------------------------
+ id     | integer |           | not null | nextval('lists_id_seq'::regclass)
+ name   | text    |           | not null | 
+Indexes:
+    "lists_pkey" PRIMARY KEY, btree (id)
+    "lists_name_key" UNIQUE CONSTRAINT, btree (name)
+Referenced by:
+    TABLE "todos" CONSTRAINT "todos_list_id_fkey" FOREIGN KEY (list_id) REFERENCES lists(id)
+
